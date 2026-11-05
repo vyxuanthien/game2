@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điều Khiển Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f5; margin: 0; padding: 20px; text-align: center; }
+        .container { background: white; max-width: 600px; margin: 30px auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        button { background: #28a745; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+        button:hover { background: #218838; }
+        h2 { color: #333; }
+        .stats { font-size: 20px; margin: 15px 0; color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bảng Điều Khiển Trò Chơi (Admin)</h2>
+        <div class="stats">Số người chơi đã tham gia: <span id="player-count">0</span></div>
+        <p id="game-status">Trạng thái: Đang chờ bắt đầu...</p>
+        
+        <button onclick="nextQuestion()">Chuyển Câu Hỏi Tiếp Theo</button>
+        
+        <div id="admin-log" style="margin-top: 20px; text-align: left; background: #f8f9fa; padding: 10px; border-radius: 5px; max-height: 200px; overflow-y: auto;"></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('update-player-count', (count) => {
+            document.getElementById('player-count').innerText = count;
+        });
+
+        function nextQuestion() {
+            socket.emit('admin-next-question');
+            document.getElementById('game-status').innerText = "Trạng thái: Câu hỏi đang diễn ra (30s)...";
+        }
+
+        socket.on('round-result', (data) => {
+            document.getElementById('game-status').innerText = `Trạng thái: Đã kết thúc câu hỏi ${data.questionIndex + 1}. Đáp án đúng: ${data.correctAnswer}. Số người đi tiếp: ${data.survivorsCount}`;
+            const log = document.getElementById('admin-log');
+            log.innerHTML += `<p>Vòng ${data.questionIndex + 1}: Đáp án [${data.correctAnswer}] - Còn lại ${data.survivorsCount} thí sinh.</p>`;
+        });
+
+        socket.on('game-ended', (data) => {
+            document.getElementById('game-status').innerText = data.message;
+        });
+    </script>
+</body>
+</html>

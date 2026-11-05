@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "text": "Nội năng của một vật là tổng:",
+    "options": [
+      "Động năng và thế năng của các phân tử cấu tạo nên vật",
+      "Động năng của chuyển động nhiệt của vật",
+      "Thế năng tương tác giữa các phân tử",
+      "Cơ năng của vật"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 2,
+    "text": "Công thức tính nhiệt lượng truyền cho vật khi thay đổi nhiệt độ là Q = m.c.Δt. Đại lượng c được gọi là gì?",
+    "options": [
+      "Nhiệt lượng riêng",
+      "Nhiệt dung riêng",
+      "Nhiệt nóng chảy riêng",
+      "Nhiệt hóa hơi riêng"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 3,
+    "text": "Đơn vị của nhiệt dung riêng trong hệ SI là:",
+    "options": ["J/kg", "J/K", "J/(kg.K)", "J"],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 4,
+    "text": "Quá trình truyền nhiệt không thực hiện bằng hình thức nào sau đây?",
+    "options": ["Dẫn nhiệt", "Đối lưu", "Bức xạ nhiệt", "Khuếch tán cơ học"],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 5,
+    "text": "Nhiệt hóa hơi riêng của một chất lỏng là nhiệt lượng cần cung cấp để:",
+    "options": [
+      "1kg chất đó hóa hơi hoàn toàn ở nhiệt độ sôi",
+      "Làm tăng nhiệt độ 1kg chất lỏng lên 1 độ C",
+      "Nóng chảy hoàn toàn 1kg chất đó",
+      "Đưa 1kg chất lỏng từ thể rắn sang thể khí"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 6,
+    "text": "Theo nguyên lý I của nhiệt động lực học, độ biến thiên nội năng của hệ bằng:",
+    "options": [
+      "Công mà hệ nhận được",
+      "Nhiệt lượng mà hệ truyền cho vật khác",
+      "Tổng công và nhiệt lượng mà hệ nhận được",
+      "Hiệu số công và nhiệt lượng"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 7,
+    "text": "Độ không tuyệt đối (0 K) ứng với nhiệt độ Celsius nào?",
+    "options": ["0°C", "-273,15°C", "-100°C", "-273°F"],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 8,
+    "text": "Hiện tượng chuyển từ thể lỏng sang thể khí xảy ra ở bề mặt chất lỏng gọi là hiện tượng gì?",
+    "options": ["Sự sôi", "Sự bay hơi", "Sự nóng chảy", "Sự ngưng tụ"],
+    "correctAnswer": "B"
+  }
+]
